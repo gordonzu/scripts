@@ -3,7 +3,7 @@
 FORMAT=$(echo -e "\033[1;33m%w%f\033[0m written")
 "$@"
 #while inotifywait -e modify --format "$FORMAT" ~/bin/cpp/katas/single_List 
-while inotifywait -e modify --format "$FORMAT" ../ 
+while inotifywait -r -e modify --format "$FORMAT" /src 
 do
 	"$@"
 done
